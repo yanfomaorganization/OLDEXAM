@@ -5,7 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <?php
-include "db.php";
+//include "db.php";
 $show = true;
 $req="";
 if(empty($_GET['Sn']))$_GET['Sn']=-11;
@@ -25,42 +25,42 @@ if(isset($_POST['add'])){
   insert_cour($_POST['course'],$_POST['Sn']);
 }
 if($show==true){
-  $req=" select * from course1";
-  $query = $pdo->prepare($req);
-  $query->execute();
-  $course1 = $query->fetchAll(PDO::FETCH_ASSOC);
-
-  $req=" select * from course2";
-  $query = $pdo->prepare($req);
-  $query->execute();
-  $course2 = $query->fetchAll(PDO::FETCH_ASSOC);
-
-  $req=" select * from course3";
-  $query = $pdo->prepare($req);
-  $query->execute();
-  $course3 = $query->fetchAll(PDO::FETCH_ASSOC);
-
-  $req=" select * from course4";
-  $query = $pdo->prepare($req);
-  $query->execute();
-  $course4 = $query->fetchAll(PDO::FETCH_ASSOC);
-  if(isset($_GET['level'])&&isset($_GET['Sn'])){
-     $req=" select * from ";
-     $req.=$_GET['level'].' ';
-     $req.=" where course_id= ";
-     $req.=$_GET['Sn'];
-  $query = $pdo->prepare($req);
-  $query->execute();
-  $list = $query->fetchAll(PDO::FETCH_ASSOC);
-  if($_GET['level']=="annee1"){
-    $req=" select * from ";
-     $req.="course1".' ';
-     $req.=" where id= ";
-     $req.=$_GET['Sn'];
-  $query = $pdo->prepare($req);
-  $query->execute();
-  $list1 = $query->fetchAll(PDO::FETCH_ASSOC);
-  }
+  // $req=" select * from course1";
+  // $query = $pdo->prepare($req);
+  // $query->execute();
+  // $course1 = $query->fetchAll(PDO::FETCH_ASSOC);
+  //
+  // $req=" select * from course2";
+  // $query = $pdo->prepare($req);
+  // $query->execute();
+  // $course2 = $query->fetchAll(PDO::FETCH_ASSOC);
+  //
+  // $req=" select * from course3";
+  // $query = $pdo->prepare($req);
+  // $query->execute();
+  // $course3 = $query->fetchAll(PDO::FETCH_ASSOC);
+  //
+  // $req=" select * from course4";
+  // $query = $pdo->prepare($req);
+  // $query->execute();
+  // $course4 = $query->fetchAll(PDO::FETCH_ASSOC);
+  // if(isset($_GET['level'])&&isset($_GET['Sn'])){
+  //    $req=" select * from ";
+  //    $req.=$_GET['level'].' ';
+  //    $req.=" where course_id= ";
+  //    $req.=$_GET['Sn'];
+  // $query = $pdo->prepare($req);
+  // $query->execute();
+  // $list = $query->fetchAll(PDO::FETCH_ASSOC);
+  // if($_GET['level']=="annee1"){
+  //   $req=" select * from ";
+  //    $req.="course1".' ';
+  //    $req.=" where id= ";
+  //    $req.=$_GET['Sn'];
+  // $query = $pdo->prepare($req);
+  // $query->execute();
+  // $list1 = $query->fetchAll(PDO::FETCH_ASSOC);
+  //}
   }
   /*if(isset($_POST['upload']) ){
   if(!empty($_POST['date']) &&!empty($_POST['prof']) &&!empty($_POST['exam'])
@@ -70,10 +70,10 @@ if($show==true){
  $file_size = $_FILES['file']['size'];
  $file_type = $_FILES['file']['type'];
  $folder="uploads/";
- 
+
  move_uploaded_file($file_loc,$folder.$file);
  $sql="INSERT INTO tbl_uploads(file,type,size) VALUES('$file','$file_type','$file_size')";
- mysql_query($sql); 
+ mysql_query($sql);
    if( !upload_cour($_POST['date'],$_GET['Sn'],$_POST['prof'],$_POST['exam'],$_POST['photo'],$_GET['level']))
     $message="Nom d'utilisateur exist deja.";
   }
@@ -86,7 +86,7 @@ if($show==true){
 <title>ancien sujet de l ufr svt et sea</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
@@ -106,21 +106,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <script type="text/javascript" charset="utf-8"> hljs.initHighlightingOnLoad(); </script>
   <link rel="stylesheet" href="highlight/github.css" type="text/css" media="screen" />
   <link href='http://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet' type='text/css'>
-  
-  
+
+
 <!----font-Awesome----->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="css/font-awesome.css" rel="stylesheet">
 <!----font-Awesome----->
 <script>
 $(document).ready(function(){
-    $(".dropdown").hover(            
+    $(".dropdown").hover(
         function() {
             $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
+            $(this).toggleClass('open');
         },
         function() {
             $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
+            $(this).toggleClass('open');
         }
     );
 });
@@ -145,10 +145,10 @@ $(document).ready(function(){
 		       <li class="dropdown">
 		            <a href="https://www.facebook.com/Burkina-fasoAncien-sujet-examenTDdevoir-ufrsvtsea-1635108976753633/" target="_blank"><i class="fa fa-user"></i><span>facebook</span></a>
 		        </li>
-		        
-		       
-		       
-		     
+
+
+
+
 		     </ul>
 	    </div>
 	    <div class="clearfix"> </div>
@@ -166,7 +166,7 @@ $(document).ready(function(){
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#"></a>
-    </div> 
+    </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
@@ -175,10 +175,10 @@ $(document).ready(function(){
               <ul class="dropdown-menu" role="menu">
               <?php foreach ($course1 as $key => $value) {?>
                  <li><a href="index.php?<?php echo "level=annee1&Sn=$value[id]";?>"><?php echo $value['course'];?></a></li>
-              
+
               <?php }?>
-                
-                
+
+
                  <li><a href="index.php?<?php echo "action=add&Sn=course1";?>">Ajouter un titre</a></li>        </ul>
             </li>
              <li class="dropdown">
@@ -187,8 +187,8 @@ $(document).ready(function(){
                 <?php foreach ($course2 as $key => $value) {?>
                  <li><a href="index.php?<?php echo "level=annee2&Sn=$value[id]";?>"><?php echo $value['course'];?></a></li>
               <?php }?>
-                <li><a href="index.php?<?php echo "action=add&Sn=course2";?>">Ajouter un titre</a></li>  
-          
+                <li><a href="index.php?<?php echo "action=add&Sn=course2";?>">Ajouter un titre</a></li>
+
               </ul>
             </li>
              <li class="dropdown">
@@ -197,8 +197,8 @@ $(document).ready(function(){
                  <?php foreach ($course3 as $key => $value) {?>
                  <li><a href="index.php?<?php echo "level=annee3&Sn=$value[id]";?>"><?php echo $value['course'];?></a></li>
               <?php }?>
-                <li><a href="index.php?<?php echo "action=add&Sn=course3";?>">Ajouter un titre</a></li>  
-          
+                <li><a href="index.php?<?php echo "action=add&Sn=course3";?>">Ajouter un titre</a></li>
+
               </ul>
             </li>
              <li class="dropdown">
@@ -207,8 +207,8 @@ $(document).ready(function(){
                  <?php foreach ($course4 as $key => $value) {?>
                  <li><a href="index.php?<?php echo "level=annee4&Sn=$value[id]";?>"><?php echo $value['course'];?></a></li>
               <?php }?>
-                <li><a href="index.php?<?php echo "action=add&Sn=course4";?>">Ajouter un titre</a></li>  
-          
+                <li><a href="index.php?<?php echo "action=add&Sn=course4";?>">Ajouter un titre</a></li>
+
               </ul>
             </li>
              <li class="dropdown">
@@ -231,7 +231,7 @@ $(document).ready(function(){
 
 <!-- banner -->
   <div class="courses_banner">
-  
+
   	<div class="container">
   		<h3>Ancient Sujet</h3>
   		<p class="description">
@@ -239,7 +239,7 @@ $(document).ready(function(){
         </p>
         <div class="breadcrumb1">
             <ul>
-              
+
             </ul>
         </div>
   	</div>
@@ -256,7 +256,7 @@ $(document).ready(function(){
 <?php }?>
 <!--<a href="">telecharger zip archive</a>
 <span>|</span>-->
-    
+
   </div>
 
 		<div class="col-md-9">
@@ -281,20 +281,20 @@ $(document).ready(function(){
                                             <td><?php echo $value['annee'];?></td>
                                             <td><?php echo $value['prof'];?></td>
                                             <td><?php echo $value['examen'];?></td>
-                                          
+
                                              <td><a href="download.php?filename=<?php echo $value['file'];?>"><?php echo $value['file'];?></a></td>
                                             <td><?php echo $value['date'];?></td>
                                         </tr>
                                    <?php }?>
-                                       
-                                       
+
+
                                     </tbody>
                                 </table>
                             </div>
                             <?php }
   if(isset($_GET['action'])&&$_GET['action']=='upload'){?>
   <div class="col-md-6 admission_right">
-             
+
               <form   action="upload.php" method="post" enctype="multipart/form-data">
                <div class="input-group input-group1">
                   <input class="form-control has-dark-background" name="date" id="slider-name" placeholder="ANNEE ex:2014" type="text" required="">
@@ -321,10 +321,10 @@ $(document).ready(function(){
                   </div>
                 </div>
                  <input class="form-control has-dark-background" name="Sn" id="slider-name" placeholder="nom du cour" type="hidden" value=<?php echO $_GET['Sn'];?>>
-            
+
                <input class="form-control has-dark-background" name="level" id="slider-name" placeholder="nom du cour" type="hidden" value=<?php echO $_GET['level'];?>>
-            
-              
+
+
                 <div class="form-field">
          <div class="col-md-7 photo"><label>fichier <em>*</em> :&nbsp;&nbsp;&nbsp;</label></div>
          <div class="col-md-5"><input type="file" name="files[]" multiple/></div>
@@ -332,29 +332,29 @@ $(document).ready(function(){
              </div>
                 <div class="clearfix"> </div>
              </div>
-              <input type="submit" value="submit" name="upload"class="course-submit">                               
-             </form>  
+              <input type="submit" value="submit" name="upload"class="course-submit">
+             </form>
              <!-- Modal HTML embedded directly into document -->
-  <?php } 
+  <?php }
 if(isset($_GET['action'])&&$_GET['action']=='add'){?>
 <form  method="POST" action="">
  <h3>ajouter</h3>
             <form  method="POST" action="" >
                <div class="input-group input-group1">
-                 
+
                 <input class="form-control has-dark-background" name="course" id="slider-name" placeholder="nom du cour" type="text" required="" value="">
               <input class="form-control has-dark-background" name="Sn" id="slider-name" placeholder="nom du cour" type="hidden" value=<?php echO $_GET['Sn'];?>>
-            
-              
+
+
                </div>
 
-              <input type="submit" value="submit" class="course-submit" name="add">                               
-             </form>  
-  </div> <?php }?> 
+              <input type="submit" value="submit" class="course-submit" name="add">
+             </form>
+  </div> <?php }?>
          </div>
-  
+
        </div>
-   
+
 		    </div>
 
 		    <div class="clearfix"> </div>
@@ -362,8 +362,8 @@ if(isset($_GET['action'])&&$_GET['action']=='add'){?>
 	</div>
     <div class="footer">
     	<div class="container">
-    		
-    		
+
+
     		<div class="clearfix"> </div>
     		<div class="copy">
 		       <p>Copyright © 2015 ancient sujet. All Rights Reserved  | Design by <a href="" target="_blank">Holyngcom</a> </p>
@@ -388,7 +388,7 @@ if(isset($_GET['action'])&&$_GET['action']=='add'){?>
   </script>
 <!-- FlexSlider -->
 </body>
-</html>	<?php }
+</html>	<?php //}
 if($show==false){
  header('Location:login.php');
   } ?>
