@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'HomeController@getData'
+]);
+
+Route::resource('cours1', 'Cours1Controller');
 
 /*
 |--------------------------------------------------------------------------

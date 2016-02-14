@@ -5,12 +5,12 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <?php
-//include "db.php";
+include "db.php";
 $show = true;
 $req="";
 if(empty($_GET['Sn']))$_GET['Sn']=-11;
 if(empty($_GET['level']))$_GET['level']="annee1";
-/*if(isset($_SESSION['username'])){
+if(isset($_SESSION['username'])){
 
     $employer = $_SESSION['username'];
 
@@ -20,49 +20,49 @@ if(empty($_GET['level']))$_GET['level']="annee1";
         $show = false;
     }
 
-}*/
+}
 if(isset($_POST['add'])){
   insert_cour($_POST['course'],$_POST['Sn']);
 }
 if($show==true){
-  // $req=" select * from course1";
-  // $query = $pdo->prepare($req);
-  // $query->execute();
-  // $course1 = $query->fetchAll(PDO::FETCH_ASSOC);
-  //
-  // $req=" select * from course2";
-  // $query = $pdo->prepare($req);
-  // $query->execute();
-  // $course2 = $query->fetchAll(PDO::FETCH_ASSOC);
-  //
-  // $req=" select * from course3";
-  // $query = $pdo->prepare($req);
-  // $query->execute();
-  // $course3 = $query->fetchAll(PDO::FETCH_ASSOC);
-  //
-  // $req=" select * from course4";
-  // $query = $pdo->prepare($req);
-  // $query->execute();
-  // $course4 = $query->fetchAll(PDO::FETCH_ASSOC);
-  // if(isset($_GET['level'])&&isset($_GET['Sn'])){
-  //    $req=" select * from ";
-  //    $req.=$_GET['level'].' ';
-  //    $req.=" where course_id= ";
-  //    $req.=$_GET['Sn'];
-  // $query = $pdo->prepare($req);
-  // $query->execute();
-  // $list = $query->fetchAll(PDO::FETCH_ASSOC);
-  // if($_GET['level']=="annee1"){
-  //   $req=" select * from ";
-  //    $req.="course1".' ';
-  //    $req.=" where id= ";
-  //    $req.=$_GET['Sn'];
-  // $query = $pdo->prepare($req);
-  // $query->execute();
-  // $list1 = $query->fetchAll(PDO::FETCH_ASSOC);
-  //}
+  $req=" select * from course1";
+  $query = $pdo->prepare($req);
+  $query->execute();
+  $course1 = $query->fetchAll(PDO::FETCH_ASSOC);
+
+  $req=" select * from course2";
+  $query = $pdo->prepare($req);
+  $query->execute();
+  $course2 = $query->fetchAll(PDO::FETCH_ASSOC);
+
+  $req=" select * from course3";
+  $query = $pdo->prepare($req);
+  $query->execute();
+  $course3 = $query->fetchAll(PDO::FETCH_ASSOC);
+
+  $req=" select * from course4";
+  $query = $pdo->prepare($req);
+  $query->execute();
+  $course4 = $query->fetchAll(PDO::FETCH_ASSOC);
+  if(isset($_GET['level'])&&isset($_GET['Sn'])){
+     $req=" select * from ";
+     $req.=$_GET['level'].' ';
+     $req.=" where course_id= ";
+     $req.=$_GET['Sn'];
+  $query = $pdo->prepare($req);
+  $query->execute();
+  $list = $query->fetchAll(PDO::FETCH_ASSOC);
+  if($_GET['level']=="annee1"){
+    $req=" select * from ";
+     $req.="course1".' ';
+     $req.=" where id= ";
+     $req.=$_GET['Sn'];
+  $query = $pdo->prepare($req);
+  $query->execute();
+  $list1 = $query->fetchAll(PDO::FETCH_ASSOC);
   }
-  /*if(isset($_POST['upload']) ){
+  }
+  if(isset($_POST['upload']) ){
   if(!empty($_POST['date']) &&!empty($_POST['prof']) &&!empty($_POST['exam'])
     &&!empty($_POST['file'])){
     $file = rand(1000,100000)."-".$_FILES['file']['name'];
@@ -77,7 +77,7 @@ if($show==true){
    if( !upload_cour($_POST['date'],$_GET['Sn'],$_POST['prof'],$_POST['exam'],$_POST['photo'],$_GET['level']))
     $message="Nom d'utilisateur exist deja.";
   }
-}*/
+}
 ?>
 
 <!DOCTYPE HTML>
